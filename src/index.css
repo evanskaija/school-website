@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile touch optimizations */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .overscroll-contain {
+    overscroll-behavior: contain;
+  }
+}
+
+@layer base {
+  :root {
+    /* Sacred Heart Brand Colors */
+    --background: 45 30% 97%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Deep Crimson Red - Heart */
+    --primary: 0 75% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm Gold - Cross */
+    --secondary: 45 90% 50%;
+    --secondary-foreground: 0 0% 15%;
+
+    /* Fresh Green - Banner */
+    --accent: 145 65% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 0 75% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(0 75% 45% / 0.95), hsl(0 60% 35% / 0.98));
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 50%), hsl(35 85% 45%));
+    --gradient-green: linear-gradient(135deg, hsl(145 65% 42%), hsl(140 55% 35%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 0.9), hsl(0 0% 100% / 0.7));
+    
+    --glass-bg: hsl(0 0% 100% / 0.25);
+    --glass-border: hsl(0 0% 100% / 0.3);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.1);
+    
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.06);
+    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.08);
+    --shadow-lg: 0 12px 40px hsl(0 0% 0% / 0.12);
+    --shadow-glow-red: 0 8px 30px hsl(0 75% 45% / 0.3);
+    --shadow-glow-gold: 0 8px 30px hsl(45 90% 50% / 0.3);
+    --shadow-glow-green: 0 8px 30px hsl(145 65% 42% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 0 75% 45%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 45 20% 95%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 45 15% 88%;
+    --sidebar-ring: 0 75% 45%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 45 20% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 0 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 85% 55%;
+    --secondary-foreground: 0 0% 10%;
+
+    --accent: 145 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 45 10% 65%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 70% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(0 65% 25% / 0.98), hsl(0 50% 18% / 0.98));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 15% / 0.9), hsl(0 0% 12% / 0.7));
+    
+    --glass-bg: hsl(0 0% 15% / 0.4);
+    --glass-border: hsl(0 0% 30% / 0.3);
+    
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 45 20% 95%;
+    --sidebar-primary: 0 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 45 20% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar - Apple Style */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 0% / 0.2);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 0% / 0.4);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 100% / 0.2);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 100% / 0.4);
+  }
+
+  /* Text Selection */
+  ::selection {
+    background: hsl(45 90% 50% / 0.3);
+    color: inherit;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-green {
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  .btn-glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .btn-glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+
+  .animate-reveal {
+    animation: reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px hsl(0 75% 45% / 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px hsl(0 75% 45% / 0.6);
+  }
+}
