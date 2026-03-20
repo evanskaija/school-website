@@ -817,6 +817,16 @@ export const translations: Translations = {
   "life.headBoy": { en: "Head Boy", sw: "Kiongozi Mvulana Mkuu" },
   "life.academicPrefect": { en: "Academic Prefect", sw: "Prefekti wa Masomo" },
   "life.sportsCapt": { en: "Sports Captain", sw: "Kapteni wa Michezo" },
+
+  // Results Chart (2015-2024)
+  "results.chart.badge": { en: "Academic Growth", sw: "Ukuaji wa Kitaaluma" },
+  "results.chart.title": { en: "A Decade of", sw: "Miongo ya" },
+  "results.chart.excellence": { en: "Excellence", sw: "Ubora" },
+  "results.chart.desc": { en: "Since 2015, Sacred Heart Secondary has maintained a trajectory of consistent improvement, culminating in a perfect 100% pass rate in 2024.", sw: "Tangu mwaka 2015, Sekondari ya Sacred Heart imedumisha mwelekeo wa kuboresha mfululizo, ikifikia kiwango bora cha kafaulu cha 100% mwaka 2024." },
+  "results.chart.currentRate": { en: "Current Pass Rate", sw: "Kiwango cha Sasa cha Kufaulu" },
+  "results.chart.distinctionRate": { en: "Distinction Rate", sw: "Kiwango cha Sifa (Distinction)" },
+  "results.chart.viewCertificates": { en: "View all official NECTA certificates", sw: "Tazama vyeti vyote rasmi vya NECTA" },
+  "results.chart.passRateLabel": { en: "Passing Rate (2015 - 2024)", sw: "Kiwango cha Kufaulu (2015 - 2024)" },
 };
 
 interface LanguageContextType {
