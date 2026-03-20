@@ -15,6 +15,7 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { AcademicsSection } from "@/components/sections/AcademicsSection";
 import { StudentLifeSection } from "@/components/sections/StudentLifeSection";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { ResultsChart } from "@/components/sections/ResultsChart";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/layout/Footer";
 
@@ -34,6 +35,9 @@ export default function Index() {
 
         {/* 5. School Statistics */}
         <StatsSection />
+        
+        {/* Academic Results Chart - New! */}
+        <ResultsChart />
 
         {/* 3. Academic Programs */}
         <AcademicsSection />

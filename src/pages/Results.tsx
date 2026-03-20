@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Search, ExternalLink, Calendar, GraduationCap, Award } from "lucide-react";
 import { useState } from "react";
+import { ResultsChart } from "@/components/sections/ResultsChart";
 import heroImage from "@/assets/graduation 1.jpg";
 
 const resultsData = [
@@ -46,6 +47,7 @@ export default function Results() {
             />
 
             <main className="py-20">
+                <ResultsChart />
                 <div className="container mx-auto px-4 lg:px-8">
                     
                     {/* Search Section */}
